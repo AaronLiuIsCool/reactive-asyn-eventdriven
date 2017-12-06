@@ -26,7 +26,7 @@ public class Dispatcher {
         int noRecordsCount = 0;
 
         while (true) {
-            final ConsumerRecords<String, String> consumerRecords = consumer.poll(1000);
+            final ConsumerRecords<String, String> consumerRecords = consumer.poll(100000000);
 
             if (consumerRecords.count() == 0) {
                 noRecordsCount++;
@@ -50,8 +50,14 @@ public class Dispatcher {
                         .collect(Collectors.toList());
             });
 
-            consumer.commitAsync();
+            try {
+                consumer.commitAsync();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
+        System.out.println("Consumer closed -----------------------------------------");
         consumer.close();
     }
 
