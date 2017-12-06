@@ -6,4 +6,5 @@ include 'notification-service'
 include 'micro-services-notification'
 include 'micro-services-special-notification'
 include 'account-service'
+include 'micro-services-bill-payment'
 

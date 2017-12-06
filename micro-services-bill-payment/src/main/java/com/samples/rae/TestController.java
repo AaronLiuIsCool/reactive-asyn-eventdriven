@@ -12,11 +12,9 @@ public class TestController {
     @Autowired
     EventService eventService;
 
-    @Autowired
-    Dispatcher dispatcher;
 
-
-    @RequestMapping("/")
+    // not the best example of the REST ;) this is an endpoint to trigger an event
+    @RequestMapping("/payments")
     public String test() {
 
         Event event = new Event();
