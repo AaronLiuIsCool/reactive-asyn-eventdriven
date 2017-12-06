@@ -1,0 +1,9 @@
+rootProject.name = 'reactive-asyn-eventdriven'
+include 'event-client'
+include 'event-consumer'
+include 'common-event-core'
+include 'notification-service'
+include 'micro-services-notification'
+include 'micro-services-special-notification'
+include 'account-service'
+
